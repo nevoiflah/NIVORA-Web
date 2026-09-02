@@ -3,6 +3,22 @@ const button = document.querySelector('[data-menu-button]');
 const nav = document.querySelector('[data-nav]');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+document.querySelectorAll('[data-support-form]').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const topic = String(data.get('topic') || 'Support').trim();
+    const message = String(data.get('message') || '').trim();
+    const subject = `Health Ring - ${topic}`;
+    const body = `Name: ${name}\nReply email: ${email}\n\n${message}`;
+    const note = form.querySelector('[data-form-note]');
+    if (note) note.textContent = 'Opening your email application...';
+    window.location.href = `mailto:nevo.iflah6@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+});
+
 button?.addEventListener('click', () => {
   const open = button.getAttribute('aria-expanded') === 'true';
   button.setAttribute('aria-expanded', String(!open));

@@ -1,14 +1,128 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Health Ring Privacy Policy"><title>Privacy Policy - Health Ring</title><link rel="icon" href="../assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"></head><body class="legal-body"><a class="skip-link" href="#policy">Skip to policy</a><header class="legal-header"><a class="brand" href="../"><img src="../assets/mark.svg" alt=""><span>Health Ring</span></a><nav><a href="../">Home</a><a href="../terms/">Terms</a></nav></header><main class="legal-main" id="policy"><p class="eyebrow">Legal · Draft</p><h1>Privacy Policy</h1><p class="legal-meta">Effective: <span class="placeholder">[EFFECTIVE DATE]</span> · Last updated: 2 September 2026</p><p class="legal-intro">This policy explains how the independent Health Ring companion application processes information when you create an account, connect compatible smart-ring hardware, use wellness features, or contact us.</p><aside class="draft-notice"><strong>Pre-publication draft.</strong> Replace all highlighted placeholders and obtain review for the jurisdictions where the app will be offered. This draft is based on the current application architecture and must be updated whenever services or data practices change.</aside><div class="legal-layout"><nav class="legal-toc" aria-label="Policy contents"><strong>Contents</strong><a href="#operator">1. Operator and scope</a><a href="#data">2. Information processed</a><a href="#purposes">3. Why we process it</a><a href="#services">4. Service providers</a><a href="#health">5. Health platforms</a><a href="#retention">6. Retention</a><a href="#security">7. Security</a><a href="#rights">8. Your choices and rights</a><a href="#children">9. Children</a><a href="#transfers">10. International transfers</a><a href="#changes">11. Changes</a><a href="#contact">12. Contact</a></nav><article class="legal-content">
-<section id="operator"><h2>1. Operator and scope</h2><p>Health Ring is operated by <span class="placeholder">[LEGAL OPERATOR AND LEGAL FORM]</span>, located at <span class="placeholder">[POSTAL ADDRESS]</span> (“Health Ring,” “we,” “us,” or “our”). Contact: <span class="placeholder">[PRIVACY EMAIL]</span>.</p><p>Health Ring is independent companion software for supported third-party smart-ring hardware. We do not manufacture the connected ring. This policy covers the mobile app, its supporting cloud services, and this website. It does not govern a hardware manufacturer’s original app, firmware, website, or independent practices.</p></section>
-<section id="data"><h2>2. Information we process</h2><h3>Account and profile</h3><p>Email address, authentication identifier, display name, age, gender selection, height, weight, preferred units, language, goals, settings, onboarding state, and account status.</p><h3>Wellness and activity information</h3><p>Depending on hardware support and your choices, the app may process sleep records and stages, heart rate, resting heart rate, heart-rate variability, blood-oxygen saturation, skin-temperature readings, stress estimates, steps, calories, readiness scores, workouts, routes, distance, pace, and related timestamps. These are general wellness measurements and may be incomplete or inaccurate.</p><h3>Connected-device information</h3><p>Ring connection and binding state, Bluetooth-advertised identifiers, battery level, firmware or device information made available by the manufacturer SDK, last connection or synchronization times, and diagnostic information needed to support pairing and synchronization.</p><h3>Location</h3><p>If you grant permission and use route-based workout features, the app processes foreground and, where separately authorized, background location coordinates, timestamps, speed, distance, and derived workout routes. Location permission is also required by some operating-system versions for Bluetooth discovery. Denying location may limit relevant features.</p><h3>Health-platform information</h3><p>If you enable Apple Health or Android Health Connect, the app may read and/or write the data types shown in the platform’s permission screen. You control these permissions through the operating system and can revoke them there.</p><h3>Notifications and technical information</h3><p>Push tokens, app installation/device keys, notification preferences, locale and time-zone information, device/platform details, app version, network request metadata such as IP address, diagnostics, error logs, synchronization markers, and security/rate-limit records.</p><h3>Local device storage</h3><p>The app stores preferences, cached wellness data, synchronization queues and markers, ring state, and workout recovery data locally. If you enable biometric sign-in, credentials may be stored using the operating system’s secure storage and protected by the device’s biometric controls.</p><h3>Website data</h3><p>This website does not enable analytics, advertising trackers, or non-essential cookies by default. If these are introduced, this policy and any consent mechanism must be updated before deployment.</p></section>
-<section id="purposes"><h2>3. Why we process information</h2><ul><li>Authenticate accounts and provide requested app functions.</li><li>Connect to supported hardware and synchronize available measurements.</li><li>Calculate and display wellness summaries, personal baselines, goals, trends, and reports.</li><li>Record workouts and routes when requested.</li><li>Synchronize with Apple Health or Health Connect when enabled.</li><li>Deliver requested reminders, operational notifications, and administrator-supported account operations.</li><li>Secure, diagnose, maintain, and improve the service.</li><li>Respond to support, deletion, and rights requests and comply with law.</li></ul><p>Where applicable, processing relies on performing our agreement with you, your consent for device/health/location permissions, legitimate interests in operating and securing the service, and legal obligations. <span class="placeholder">[CONFIRM JURISDICTION-SPECIFIC LEGAL BASES]</span></p></section>
-<section id="services"><h2>4. Storage and service providers</h2><p>The current architecture uses:</p><ul><li><strong>Google Firebase</strong> for authentication, user/profile records, configuration, push-token records, and supporting cloud functions.</li><li><strong>MongoDB Atlas</strong> for backend wellness, sleep, readiness, workout, and diagnostic records.</li><li><strong>Expo</strong> and platform push services for push-notification delivery.</li><li><strong>Apple HealthKit</strong> or <strong>Android Health Connect</strong> only when you enable the relevant integration.</li><li><strong>Cloud hosting and network providers</strong> used to operate the authenticated API. <span class="placeholder">[NAME CURRENT HOSTING PROVIDER AND REGION]</span></li><li><strong>Third-party ring SDK technology</strong> used locally to communicate with compatible hardware.</li></ul><p>We do not sell personal wellness information to advertisers. We may disclose information to service providers acting for us, where required by law, to protect users or the service, or as part of a properly disclosed business transfer.</p></section>
-<section id="health"><h2>5. Apple Health and Health Connect</h2><p>Health-platform access is optional. Health data obtained through Apple Health is used only to provide health and fitness features and is not used for advertising, marketing based on sensitive data, or sale to data brokers. Health Connect data is handled in accordance with applicable Google Health Connect policies. Platform rules and permission screens control which specific data types are available.</p></section>
-<section id="retention"><h2>6. Retention and deletion</h2><p>We retain account and wellness information while the account remains active and as needed to provide the service, secure systems, resolve disputes, or comply with law. Local caches remain until removed by the app, account deletion flow, operating system, or app uninstall.</p><p>The current deletion flow is designed to remove the user from Firebase Authentication and delete associated Firestore and MongoDB records. Some limited security, audit, transaction, or legal records may be retained where required. Backups may persist for a limited period before routine deletion. Insert confirmed schedules here: <span class="placeholder">[RETENTION AND BACKUP PERIODS]</span>.</p></section>
-<section id="security"><h2>7. Security</h2><p>We use measures intended to protect information, including authenticated API access, access-control rules, transport encryption, platform secure storage, rate limiting, and restricted administrative operations. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p></section>
-<section id="rights"><h2>8. Your choices and rights</h2><p>Depending on your location, you may have rights to access, correct, export, restrict, object to, or delete personal information and to withdraw consent. The app provides profile controls, health-platform permission controls, export tools, and an authenticated account-deletion process. You can also revoke Bluetooth, location, health, and notification permissions in system settings.</p><p>Submit privacy requests to <span class="placeholder">[PRIVACY EMAIL]</span>. We may need to verify your identity. You may also have the right to complain to the applicable data-protection authority.</p></section>
-<section id="children"><h2>9. Children</h2><p>The service is not directed to children under <span class="placeholder">[MINIMUM AGE]</span>. We do not knowingly permit accounts below the applicable minimum age. Contact us if you believe a child has provided information improperly.</p></section>
-<section id="transfers"><h2>10. International transfers</h2><p>Providers may process information outside your country, including in countries with different data-protection laws. Where required, we use appropriate transfer mechanisms and contractual safeguards. <span class="placeholder">[CONFIRM HOSTING REGIONS AND TRANSFER MECHANISMS]</span></p></section>
-<section id="changes"><h2>11. Changes to this policy</h2><p>We may update this policy to reflect changes in the service, law, or providers. We will post the revised version with a new date and provide additional notice where required.</p></section>
-<section id="contact"><h2>12. Contact</h2><p><span class="placeholder">[LEGAL OPERATOR]</span><br><span class="placeholder">[POSTAL ADDRESS]</span><br><span class="placeholder">[PRIVACY EMAIL]</span><br><span class="placeholder">[WEBSITE DOMAIN]</span></p></section>
-</article></div></main><footer class="legal-footer"><span>Health Ring · Independent companion software</span><span><a href="../">Home</a> · <a href="../terms/">Terms of Use</a></span></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Health Ring Privacy Policy">
+  <title>Privacy Policy - Health Ring</title>
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../script.js"></script>
+</head>
+<body class="legal-body">
+  <a class="skip-link" href="#policy">Skip to policy</a>
+  <header class="legal-header">
+    <a class="brand" href="../"><img src="../assets/mark.svg" alt=""><span>Health Ring</span></a>
+    <nav><a href="../">Home</a><a href="../terms/">Terms of Use</a></nav>
+  </header>
+  <main class="legal-main" id="policy">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">Effective and last updated: 2 September 2026</p>
+    <p class="legal-intro">This policy explains how Health Ring processes information when you create an account, connect compatible smart-ring hardware, use wellness features, or contact us.</p>
+    <div class="legal-layout">
+      <nav class="legal-toc" aria-label="Policy contents">
+        <strong>Contents</strong>
+        <a href="#operator">1. Operator and scope</a><a href="#data">2. Information processed</a>
+        <a href="#purposes">3. Purposes and bases</a><a href="#services">4. Providers and sharing</a>
+        <a href="#health">5. Health platforms</a><a href="#location">6. Location</a>
+        <a href="#retention">7. Retention and deletion</a><a href="#security">8. Security</a>
+        <a href="#rights">9. Your rights</a><a href="#children">10. Children</a>
+        <a href="#transfers">11. International transfers</a><a href="#changes">12. Changes</a>
+        <a href="#contact">13. Contact</a>
+      </nav>
+      <article class="legal-content">
+        <section id="operator">
+          <h2>1. Operator and scope</h2>
+          <p>Health Ring is operated by Nevo Iflah, an individual developer based in Israel ("Health Ring," "we," "us," or "our"). You can contact us using the form below.</p>
+          <p>Health Ring is independent companion software compatible with supported SHR Ring hardware. We do not manufacture the connected ring. This policy covers the mobile app, its supporting cloud services, and this website. It does not cover the hardware manufacturer's own app, firmware, website, or privacy practices.</p>
+        </section>
+        <section id="data">
+          <h2>2. Information we process</h2>
+          <h3>Account and profile</h3>
+          <p>Email address, authentication identifier, display name, age, gender selection, height, weight, units, language, goals, settings, onboarding state, and account status.</p>
+          <h3>Wellness and activity</h3>
+          <p>Depending on your hardware and choices, this can include sleep and sleep stages, heart rate, resting heart rate, heart-rate variability, blood-oxygen saturation, skin temperature, stress estimates, steps, calories, readiness scores and contributors, workouts, routes, distance, pace, and timestamps. Measurements can be incomplete or inaccurate.</p>
+          <h3>Connected device</h3>
+          <p>Bluetooth-advertised identifiers, connection and binding state, battery level, firmware information, synchronization times, and information supplied by the compatible ring SDK.</p>
+          <h3>Technical and notification data</h3>
+          <p>Push tokens, app installation or device keys, notification preferences, locale, time zone, platform, app version, network request metadata, synchronization markers, rate-limit records, and diagnostic information. Production error reports can include your user identifier, error scope and message, related diagnostic details, app version, and platform.</p>
+          <h3>Local storage</h3>
+          <p>The app stores preferences, wellness caches, synchronization queues, workout recovery data, ring state, and a limited diagnostic buffer on your device. Authentication persistence and protected values use platform-provided storage mechanisms where available.</p>
+          <h3>Website and support</h3>
+          <p>This website does not use advertising trackers, analytics, or non-essential cookies. The support form creates a draft in your email application. The website does not submit or store the form contents, but your email provider and ours process the message when you send it.</p>
+        </section>
+        <section id="purposes">
+          <h2>3. Why we process information</h2>
+          <ul>
+            <li>Authenticate accounts and provide app functions.</li>
+            <li>Connect compatible hardware and synchronize measurements.</li>
+            <li>Calculate and display wellness summaries, baselines, goals, trends, readiness and sleep scores, and reports.</li>
+            <li>Record workouts and routes you initiate.</li>
+            <li>Synchronize with Apple Health or Health Connect when enabled.</li>
+            <li>Send requested verification, operational, and reminder messages.</li>
+            <li>Secure, diagnose, maintain, and improve the service.</li>
+            <li>Handle support, deletion, legal requests, and legal obligations.</li>
+          </ul>
+          <p>Depending on applicable law, we rely on performing our agreement with you, your consent, our legitimate interests in operating and securing the service, and compliance with legal obligations. You can withdraw permission through the app or device settings, but this may disable the related feature.</p>
+        </section>
+        <section id="services">
+          <h2>4. Providers and sharing</h2>
+          <p>We use Google Firebase Authentication, Firestore, and Cloud Functions for accounts, profiles, configuration, app operations, and push-token records; MongoDB Atlas for wellness, sleep, readiness, workout, route, and diagnostic records; Render for backend hosting; Expo and Apple or Google platform services for notifications; Resend for account emails; Apple HealthKit and Android Health Connect for optional health synchronization; Google Maps for map features; and third-party ring SDK technology for compatible hardware communication.</p>
+          <p>We disclose information to these providers only as needed to operate their function. We may also disclose information when legally required, to protect users and the service, or during a merger, acquisition, financing, reorganization, or sale, subject to appropriate notice and safeguards.</p>
+          <p>We do not sell personal information, use health information for advertising, share it with data brokers, or use third-party advertising or behavioral analytics SDKs.</p>
+        </section>
+        <section id="health">
+          <h2>5. Apple Health and Health Connect</h2>
+          <p>Health integration is optional. Subject to the permission profile you choose, the app may read heart rate, HRV, oxygen saturation, resting heart rate, steps, sleep, and body temperature.</p>
+          <p>It may write workouts, heart rate, steps, sleep, body temperature, and distance to Apple Health. On Health Connect it may write exercise sessions, heart rate, HRV, oxygen saturation, steps, sleep, body temperature, distance, and total calories burned. Platform availability can vary. Health data is used only to provide health and fitness functionality, not for advertising or sale.</p>
+        </section>
+        <section id="location">
+          <h2>6. Location and workout routes</h2>
+          <p>If you start a route-based workout and grant permission, the app processes precise foreground location and, if separately allowed, background location. Coordinates are stored locally during an active workout and uploaded with the completed workout route to cloud storage. Background access lets recording continue while the app is not visible or the phone is locked. You can deny or revoke location access, but route and distance features may be limited.</p>
+        </section>
+        <section id="retention">
+          <h2>7. Retention and deletion</h2>
+          <p>Account, profile, wellness, and workout information is generally kept while your account is active and until you delete it or request deletion. Push tokens are kept until replaced, invalidated, or deleted. Remote production diagnostic entries are configured to expire after 30 days. Local information remains until cleared by the app, account deletion, the operating system, or app uninstall.</p>
+          <p>You can start account deletion from the app's profile controls. The app attempts to delete associated MongoDB wellness records, Firestore information, local caches, and the Firebase Authentication account. If a deletion step fails or you cannot access the app, contact us so we can complete or verify the request. Limited records may be retained when legally necessary. Provider backups can persist temporarily until overwritten through normal backup cycles.</p>
+        </section>
+        <section id="security">
+          <h2>8. Security</h2>
+          <p>We use measures intended to protect information, including authenticated API access, Firestore access rules, transport encryption, platform storage, rate limiting, restricted administrative operations, and controlled account deletion. No system is completely secure, and absolute security cannot be guaranteed.</p>
+        </section>
+        <section id="rights">
+          <h2>9. Your choices and rights</h2>
+          <p>Depending on where you live, you may have rights to access, correct, export, delete, restrict, or object to processing; withdraw consent; and appeal or complain to a regulator. The app provides profile controls, permission controls, export tools, and account deletion. We do not discriminate against users for exercising applicable privacy rights.</p>
+          <p>Residents of the European Economic Area or United Kingdom may contact their local data-protection authority. California and other US residents can exercise any applicable access, correction, deletion, and opt-out rights. Because we do not sell personal information or use it for cross-context behavioral advertising, there is no sale or advertising sharing to opt out of.</p>
+          <p>Use the contact form below to make a request. We may verify your identity before acting.</p>
+        </section>
+        <section id="children">
+          <h2>10. Children</h2>
+          <p>Health Ring is not directed to anyone under 16, and users must be at least 16 to create an account. We do not knowingly collect personal information from children under 16. Contact us if you believe a younger child has created an account.</p>
+        </section>
+        <section id="transfers">
+          <h2>11. International transfers</h2>
+          <p>We operate from Israel and use providers that may process information in Israel, the United States, and other countries. These countries may have different privacy laws. Where applicable, transfers are handled using provider contractual protections, adequacy decisions, or other legally recognized safeguards.</p>
+        </section>
+        <section id="changes">
+          <h2>12. Changes to this policy</h2>
+          <p>We may update this policy when the service, providers, or law changes. The revised policy will show a new effective date, and we will provide additional notice when required.</p>
+        </section>
+        <section id="contact">
+          <h2>13. Contact and privacy requests</h2>
+          <p>Contact Nevo Iflah for support, privacy questions, or rights requests. This form opens your email application and does not transmit information through this website.</p>
+          <form class="support-form" data-support-form>
+            <label>Name<input name="name" autocomplete="name" required></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Topic<select name="topic"><option>Privacy request</option><option>Account deletion</option><option>Technical support</option><option>Other</option></select></label>
+            <label>Message<textarea name="message" rows="6" required></textarea></label>
+            <button class="button support-submit" type="submit">Create email</button>
+            <p class="form-note" data-form-note aria-live="polite"></p>
+          </form>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="legal-footer"><span>Health Ring · Independent companion software</span><span><a href="../">Home</a> · <a href="../terms/">Terms of Use</a></span></footer>
+</body>
+</html>
