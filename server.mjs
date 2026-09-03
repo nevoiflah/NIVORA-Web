@@ -19,4 +19,4 @@ createServer((request, response) => {
   }
   response.writeHead(200, { 'Content-Type': types[extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
   createReadStream(file).pipe(response);
-}).listen(port, host, () => console.log(`Health Ring website: http://${host}:${port}`));
+}).listen(port, host, () => console.log(`Nivora website: http://${host}:${port}`));

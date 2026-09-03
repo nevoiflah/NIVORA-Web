@@ -1,10 +1,10 @@
-# Health Ring Website
+# Nivora Website
 
-Official marketing and legal website for Health Ring, an independent wellness companion application compatible with supported SHR Ring hardware.
+Official marketing and legal website for Nivora, an independent wellness companion application compatible with supported SHR Ring hardware.
 
 The website introduces the app, explains its hardware relationship, demonstrates its primary wellness features, and provides public Privacy Policy and Terms of Use pages. It is built with plain HTML, CSS, and JavaScript, with no client-side framework or runtime package dependencies.
 
-> Health Ring is independent companion software. It is not the SHR Ring manufacturer's original application, does not manufacture the connected hardware, and is intended for general wellness rather than medical use.
+> Nivora is independent companion software. It is not the SHR Ring manufacturer's original application, does not manufacture the connected hardware, and is intended for general wellness rather than medical use.
 
 ## Highlights
 
@@ -152,7 +152,7 @@ This website does not currently include:
 - A contact-form database
 - User accounts or authentication
 
-The website's legal documents describe the separate Health Ring mobile application and its supporting services. If website analytics, cookies, hosted form processing, embedded media, or other third-party scripts are added, the Privacy Policy and consent behavior must be reviewed before deployment.
+The website's legal documents describe the separate Nivora mobile application and its supporting services. If website analytics, cookies, hosted form processing, embedded media, or other third-party scripts are added, the Privacy Policy and consent behavior must be reviewed before deployment.
 
 ## Accessibility
 
@@ -242,6 +242,6 @@ GitHub: [nevoiflah/HealthRing-Web](https://github.com/nevoiflah/HealthRing-Web)
 
 ## Ownership
 
-Health Ring was developed and is operated by Nevo Iflah, an independent developer based in Israel.
+Nivora was developed and is operated by Nevo Iflah, an independent developer based in Israel.
 
 © 2026 Nevo Iflah. All rights reserved.
