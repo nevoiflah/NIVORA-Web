@@ -1,4 +1,4 @@
-# Nivora Website
+# NIVORA Website
 
 Official marketing and legal website for Nivora, an independent wellness companion application compatible with supported SHR Ring hardware.
 
