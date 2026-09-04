@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Complete your NIVORA account action">
+  <title>NIVORA Account</title>
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .action-body{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;background:#f5f2eb}
+    .action-main{display:grid;place-items:center;padding:64px 22px}
+    .action-card{width:min(480px,100%);padding:42px;background:rgba(255,255,255,.78);border:1px solid #c8d1d3;border-radius:24px;box-shadow:0 24px 70px rgba(32,37,42,.1);text-align:center}
+    .action-mark{width:58px;height:58px;margin:0 auto 25px}.action-card h1{font-size:34px;font-weight:400;letter-spacing:-.04em;margin-bottom:14px}.action-card p{color:#52616a;line-height:1.65;margin-bottom:24px}
+    .action-form{display:grid;gap:14px;text-align:left}.action-form label{font-size:12px;font-weight:600}.action-form input{width:100%;margin-top:8px;padding:14px;border:1px solid #aebabe;border-radius:12px;background:#fff;font:inherit}
+    .action-button{width:100%;border:0;background:#537c8c;color:#fff;cursor:pointer}.action-button:disabled{opacity:.55;cursor:wait}.action-state{min-height:24px;font-size:13px!important;margin:16px 0 0!important}[dir="rtl"] .action-form{text-align:right}
+  </style>
+</head>
+<body class="action-body">
+  <header class="legal-header"><a class="brand" href="../"><img src="../assets/mark.svg" alt=""><span class="brand-wordmark" aria-label="Nivora">NIVORA</span></a></header>
+  <main class="action-main">
+    <section class="action-card" aria-live="polite">
+      <img class="action-mark" src="../assets/mark.svg" alt="">
+      <h1 id="title">Checking your link…</h1><p id="message">Please wait while NIVORA validates this secure request.</p>
+      <form id="reset-form" class="action-form" hidden>
+        <label>New password<input id="password" type="password" minlength="8" autocomplete="new-password" required></label>
+        <label>Confirm new password<input id="password-confirm" type="password" minlength="8" autocomplete="new-password" required></label>
+        <button id="submit" class="button action-button" type="submit">Update password</button>
+      </form>
+      <p id="state" class="action-state"></p><a id="home" class="button" href="../" hidden>Return to NIVORA</a>
+    </section>
+  </main>
+  <footer class="legal-footer"><span>NIVORA · Independent companion software</span><span><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a></span></footer>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+    import { getAuth, applyActionCode, verifyPasswordResetCode, confirmPasswordReset } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
+    const params=new URLSearchParams(location.search),mode=params.get('mode'),code=params.get('oobCode'),apiKey=params.get('apiKey'),lang=params.get('lang')==='he'?'he':'en';
+    document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';
+    const copy=lang==='he'?{checking:'בודקים את הקישור…',wait:'יש להמתין בזמן ש-NIVORA מאמתת את הבקשה.',verified:'האימייל אומת',verifiedBody:'כתובת האימייל שלך אומתה. אפשר לחזור לאפליקציה ולהתחבר.',reset:'בחירת סיסמה חדשה',resetBody:'יש להזין סיסמה חדשה בת 8 תווים לפחות.',updated:'הסיסמה עודכנה',updatedBody:'הסיסמה החדשה נשמרה. אפשר לחזור לאפליקציה ולהתחבר.',invalid:'הקישור אינו תקין או שפג תוקפו',invalidBody:'יש לבקש קישור חדש מאפליקציית NIVORA.',mismatch:'הסיסמאות אינן תואמות.',home:'חזרה ל-NIVORA',submit:'עדכון סיסמה'}:{checking:'Checking your link…',wait:'Please wait while NIVORA validates this secure request.',verified:'Email verified',verifiedBody:'Your email address is verified. You can return to the app and sign in.',reset:'Choose a new password',resetBody:'Enter a new password containing at least 8 characters.',updated:'Password updated',updatedBody:'Your new password has been saved. You can return to the app and sign in.',invalid:'This link is invalid or has expired',invalidBody:'Request a new link from the NIVORA app.',mismatch:'The passwords do not match.',home:'Return to NIVORA',submit:'Update password'};
+    const title=document.querySelector('#title'),message=document.querySelector('#message'),state=document.querySelector('#state'),form=document.querySelector('#reset-form'),home=document.querySelector('#home'),submit=document.querySelector('#submit');
+    title.textContent=copy.checking;message.textContent=copy.wait;home.textContent=copy.home;submit.textContent=copy.submit;
+    const fail=()=>{title.textContent=copy.invalid;message.textContent=copy.invalidBody;form.hidden=true;home.hidden=false};
+    if(!mode||!code||!apiKey){fail()}else{
+      const auth=getAuth(initializeApp({apiKey,authDomain:'for-project-92ed3.firebaseapp.com'}));
+      if(mode==='verifyEmail')applyActionCode(auth,code).then(()=>{title.textContent=copy.verified;message.textContent=copy.verifiedBody;home.hidden=false}).catch(fail);
+      else if(mode==='resetPassword')verifyPasswordResetCode(auth,code).then(()=>{title.textContent=copy.reset;message.textContent=copy.resetBody;form.hidden=false;form.addEventListener('submit',async event=>{event.preventDefault();const password=document.querySelector('#password').value,confirmation=document.querySelector('#password-confirm').value;if(password!==confirmation){state.textContent=copy.mismatch;return}submit.disabled=true;state.textContent='';try{await confirmPasswordReset(auth,code,password);title.textContent=copy.updated;message.textContent=copy.updatedBody;form.hidden=true;home.hidden=false}catch{fail()}})}).catch(fail);else fail();
+    }
+  </script>
+</body>
+</html>
