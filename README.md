@@ -4,6 +4,10 @@ Official marketing and legal website for Nivora, an independent wellness compani
 
 The website introduces the app, explains its hardware relationship, demonstrates its primary wellness features, and provides public Privacy Policy and Terms of Use pages. It is built with plain HTML, CSS, and JavaScript, with no client-side framework or runtime package dependencies.
 
+NIVORA is available for iPhone on the [App Store](https://apps.apple.com/app/id6760432299). Download links in the hero and closing section go directly to the store on mobile devices. On desktop, they open a native dialog with a locally hosted QR code and a direct store link. Escape, the close button, or clicking the backdrop dismisses the dialog. Without JavaScript or dialog support, the links still open the store. Modified clicks retain normal browser behavior.
+
+The QR asset (`assets/app-store-qr.svg`) encodes the same App Store URL as the download links in `index.html`. If the destination changes, regenerate the QR and update all three links together. The URL uses the app's stable numeric ID, so it does not contain an outdated app name.
+
 > Nivora is independent companion software. It is not the SHR Ring manufacturer's original application, does not manufacture the connected hardware, and is intended for general wellness rather than medical use.
 
 ## Highlights
@@ -23,21 +27,9 @@ The website introduces the app, explains its hardware relationship, demonstrates
 
 ## Scroll experience
 
-The homepage combines normal semantic HTML with a fixed decorative canvas scene. Page content remains selectable, accessible, and indexable while the canvas provides the visual depth layer.
+The homepage connects chapters through shared backgrounds and overlapping compositions. A floating compatibility card passes over the opening lake. The ring and phone cross a diagonal change from dark to light, followed by metrics and trends on shared pearl ground. The chart is an inset dark panel, with angled report pages overlapping its lower edge. Privacy sits beside the report on desktop. The closing lake extends behind both the wellness note and download invitation.
 
-As the visitor scrolls, the scene progresses through several states:
-
-1. The hero photograph moves with subtle parallax.
-2. The camera appears to pass through the lake surface.
-3. Underwater fog, particles, waves, and light rays establish depth.
-4. A dimensional ring enters and rotates.
-5. The ring separates into connected wellness data points.
-6. The points form a trend visualization.
-7. The visualization transitions into report-page forms.
-
-The scene is calculated directly from the current scroll position. Scrolling upward reverses the transformations instead of playing separate one-time animations.
-
-On smaller screens, movement distances, parallax strength, blur, particle complexity, and animation timing are reduced. If the operating system requests reduced motion, the decorative canvas is disabled and the content is presented without motion-dependent effects.
+On spacious desktop screens the opening and connection scenes briefly stay in view while scrolling; the metrics heading stays beside its stories. The ring and phone drift at different speeds as the signal lights up. The trend line draws progressively, report pages fan apart and settle, and the closing lake drifts behind steady text. These effects follow scroll position in either direction. The visible scroll cue sits beneath the hero download button. Smaller screens stack the report and privacy content, and reduced-motion visitors get a static layout. All text remains available without JavaScript. Navigation contains only Privacy Policy and Terms of Use; the hero has one App Store download button.
 
 ## Technology
 
